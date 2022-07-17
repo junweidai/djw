@@ -1,0 +1,14 @@
+x=[1:1:1024];t=x/1024;
+f1=5;f2=15;a=2;b=5;
+y1=a*sin(2*pi*f1*t);
+y2=b*sin(2*pi*f2*t);
+z1=y1+y2;
+z1=z1';z1=[170;z1];
+f3=5;f4=5;c=5;d=5;
+y3=c*sin(2*pi*f3*t);
+y4=d*sin(2*pi*f4*t);
+z2=y3+y4;
+z2=z2';z2=[85;z2];
+f(:,1)=z1; f(:,2)=z2;k=1;
+filename=['C:\Users\戴俊伟的电脑\Desktop\',num2str(k),'.txt'];
+dlmwrite(filename,f,'delimiter','\t','precision','%10.9f');
